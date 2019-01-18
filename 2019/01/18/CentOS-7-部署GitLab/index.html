@@ -96,20 +96,25 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Coding for fun">
-<meta property="og:url" content="http://yimlu.github.io/index.html">
+  <meta name="description" content="准备工作首先是一些准备工作，参考的链接为 https://about.gitlab.com/install/#centos-7直接贴代码 12345sudo yum install -y curl policycoreutils-python openssh-serversudo systemctl enable sshdsudo systemctl start sshdsudo firewall">
+<meta name="keywords" content="DevOps,GitLab">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CentOS 7 部署GitLab">
+<meta property="og:url" content="http://yimlu.github.io/2019/01/18/CentOS-7-部署GitLab/index.html">
 <meta property="og:site_name" content="Coding for fun">
+<meta property="og:description" content="准备工作首先是一些准备工作，参考的链接为 https://about.gitlab.com/install/#centos-7直接贴代码 12345sudo yum install -y curl policycoreutils-python openssh-serversudo systemctl enable sshdsudo systemctl start sshdsudo firewall">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-01-18T13:59:51.381Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Coding for fun">
+<meta name="twitter:title" content="CentOS 7 部署GitLab">
+<meta name="twitter:description" content="准备工作首先是一些准备工作，参考的链接为 https://about.gitlab.com/install/#centos-7直接贴代码 12345sudo yum install -y curl policycoreutils-python openssh-serversudo systemctl enable sshdsudo systemctl start sshdsudo firewall">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yimlu.github.io/">
+  <link rel="canonical" href="http://yimlu.github.io/2019/01/18/CentOS-7-部署GitLab/">
 
 
 
@@ -119,7 +124,7 @@
   };
 </script>
 
-  <title>Coding for fun</title>
+  <title>CentOS 7 部署GitLab | Coding for fun</title>
   
 
 
@@ -167,8 +172,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -206,7 +210,7 @@
         
         
           
-          <li class="menu-item menu-item-home menu-item-active">
+          <li class="menu-item menu-item-home">
 
     
     
@@ -268,9 +272,9 @@
           
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -302,10 +306,8 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/01/18/CentOS-7-部署GitLab/" class="post-title-link" itemprop="url">CentOS 7 部署GitLab</a>
+          <h1 class="post-title" itemprop="name headline">CentOS 7 部署GitLab
+
               
             
           </h1>
@@ -369,9 +371,7 @@
       
 
       
-        
-          
-            <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>首先是一些准备工作，参考的链接为 <a href="https://about.gitlab.com/install/#centos-7" target="_blank" rel="noopener">https://about.gitlab.com/install/#centos-7</a><br>直接贴代码</p>
+        <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>首先是一些准备工作，参考的链接为 <a href="https://about.gitlab.com/install/#centos-7" target="_blank" rel="noopener">https://about.gitlab.com/install/#centos-7</a><br>直接贴代码</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install -y curl policycoreutils-python openssh-server</span><br><span class="line">sudo systemctl <span class="built_in">enable</span> sshd</span><br><span class="line">sudo systemctl start sshd</span><br><span class="line">sudo firewall-cmd --permanent --add-service=http</span><br><span class="line">sudo systemctl reload firewalld</span><br></pre></td></tr></table></figure>
 <p>备注：在阿里云上不需要这一步，本身就已经开启sshd，firewalld却没有运行</p>
 <p>然后是根据官方文档，设置邮件服务，在阿里云上可以跳过了，测试时启动失败，原因没有深究</p>
@@ -385,8 +385,6 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gitlab-runner register</span><br></pre></td></tr></table></figure>
 <p>这是一个交互式命令，需要填写gitlab url，token等等信息</p>
 
-          
-        
       
     </div>
 
@@ -407,14 +405,22 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/DevOps/" rel="tag"># DevOps</a>
+          
+            <a href="/tags/GitLab/" rel="tag"># GitLab</a>
+          
+        </div>
+      
+
+      
+      
+      
 
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -424,14 +430,15 @@
   </article>
 
 
-    
-  </section>
-
-  
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -452,8 +459,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -512,6 +528,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备工作"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CI-CD配置"><span class="nav-number">3.</span> <span class="nav-text">CI/CD配置</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -639,6 +672,10 @@
 
 
   
+  <script src="/js/src/scrollspy.js?v=6.7.0"></script>
+<script src="/js/src/post-details.js?v=6.7.0"></script>
+
+
 
   
 
@@ -649,6 +686,8 @@
 
   
 
+
+  
 
 
   
